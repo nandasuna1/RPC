@@ -1,4 +1,4 @@
-package com.nandasuna;
+package com.nandasuna.serverrpc;
 
 public class Calculator {
 	

@@ -1,7 +1,12 @@
 package com.nandasuna.serverrpc;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.IOException;
+
+import org.apache.xmlrpc.XmlRpcException;
+import org.apache.xmlrpc.server.PropertyHandlerMapping;
+import org.apache.xmlrpc.server.XmlRpcServer;
+import org.apache.xmlrpc.server.XmlRpcServerConfigImpl;
+import org.apache.xmlrpc.webserver.WebServer;
 
 public class ServerRpcApplication {
 
@@ -18,7 +23,7 @@ public class ServerRpcApplication {
 
 			PropertyHandlerMapping phm = new PropertyHandlerMapping();
 
-			phm.addHandler("Calculadora", Calculadora.class);
+			phm.addHandler("Calculadora", Calculator.class);
 			xmlRpcServer.setHandlerMapping(phm);
 
 			XmlRpcServerConfigImpl serverConfig = (XmlRpcServerConfigImpl) xmlRpcServer.getConfig();
